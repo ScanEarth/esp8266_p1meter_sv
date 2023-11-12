@@ -641,11 +641,17 @@ void setup()
     // * Reset settings - uncomment for testing
     // wifiManager.resetSettings();
 
+    // * Set Connection Timeout
+    wifiManager.setConnectTimeout(CONNECT_TIMEOUT);
+
+    // * Set Connection retries
+    wifiManager.setConnectRetries(CONNECT_TIMEOUT);
+
     // * Set callback that gets called when connecting to previous WiFi fails, and enters Access Point mode
     wifiManager.setAPCallback(configModeCallback);
 
     // * Set timeout
-    wifiManager.setConfigPortalTimeout(WIFI_TIMEOUT);
+    wifiManager.setConfigPortalTimeout(PORTAL_TIMEOUT);
 
     // * Set save config callback
     wifiManager.setSaveConfigCallback(save_wifi_config_callback);
@@ -658,7 +664,7 @@ void setup()
 
     // * Fetches SSID and pass and tries to connect
     // * Reset when no connection after 10 seconds
-    if (!wifiManager.autoConnect())
+    if (!wifiManager.autoConnect("p1meter-SetupAP"))
     {
         Serial.println(F("Failed to connect to WIFI and hit timeout"));
 
