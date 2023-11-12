@@ -21,10 +21,19 @@
 #define HOSTNAME "p1meter"
 
 // * The password used for OTA
-#define OTA_PASSWORD "default"
+#define OTA_PASSWORD "p1meter"
 
 // * Wifi timeout in milliseconds
-#define WIFI_TIMEOUT 30000
+#define WIFI_TIMEOUT 5000
+
+// * Wifi-Portal timeout in milliseconds
+#define PORTAL_TIMEOUT 180
+
+// * Wifi-Connect timeout in milliseconds
+#define CONNECT_TIMEOUT 30
+
+// * Wifi timeout in milliseconds
+#define CONNECT_RETRIES 100
 
 // * MQTT network settings
 #define MQTT_MAX_RECONNECT_TRIES 10
